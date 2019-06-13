@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import time
@@ -180,8 +179,8 @@ if __name__ == "__main__":
         text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
         iteration = [0]
         def update_fig(ilist, rects, iteration):
-                global rect
-                for rect, val in zip(rects, ilist):
+                global rect 
+                for rect, val in zip(rects, ilist): #zip joins rect and ilist coordiantes in pairs
                         rect.set_height(val)
                 iteration[0] += 1
                         
@@ -192,6 +191,3 @@ if __name__ == "__main__":
             fargs=(bar_rects, iteration), frames=generator, interval=1,
             repeat=False)
         plt.show()
-
-
-
