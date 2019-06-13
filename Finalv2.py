@@ -7,15 +7,15 @@ back = False
 """
 Reading text file for list
 """
-global ilist2
-ilist2 = []
+global ilistO
+ilistO = []
 temp_lis = []
 with open ("yagmai.txt") as tf:
     rtf = csv.reader(tf, delimiter = ",")
     for line in rtf:
         for p in range (len(line)):
             temp_lis.append(int(line[p]))
-        ilist2.extend(temp_lis)
+        ilistO.extend(temp_lis)
         temp_lis = []
 
 #-------------------------------------
@@ -24,30 +24,30 @@ with open ("yagmai.txt") as tf:
 import sorts_no_visuals as snv
 
 def quick():
-    ilist = ilist2
+    ilist = ilistO
     snv.quick_sort(ilist,0,len(ilist)-1)
     print(ilist)
 
 def bubble():
-    ilist = ilist2
+    ilist = ilistO
     snv.bubblesort(ilist)
     print(ilist)
     
 def insertion():
-    ilist = ilist2
+    ilist = ilistO
     snv.insertionsort(ilist)
     print(ilist)
 
 def radix():
-    ilist = ilist2
+    ilist = ilistO
     
 def merge():
-    ilist = ilist2
+    ilist = ilistO
 
 #-------------------------------------
 
 def lists():
-    print (ilist2)
+    print (ilistO)
 
 def visuals():
     mainV()
@@ -131,9 +131,9 @@ def main():
     root.maxsize(500,500)
     root.mainloop()
 #----------------------------------------------
-if ilist2 == []:
+if ilistO == []:
     print ("please enter list into yagmai.txt text file")
     print ("with a format like ##,##,##,##")
 else:
-    print ("Your list is :", ilist2)
+    print ("Your list is :", ilistO)
 main()

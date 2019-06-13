@@ -16,6 +16,7 @@ def quick_sort (ilist,low,hi):
         p = (border)
         quick_sort(ilist, low, p - 1)
         quick_sort(ilist, p + 1, hi)
+        
 def get_pivot(A, low, hi):
     mid = (hi + low) // 2
     pivot = hi
@@ -64,7 +65,7 @@ def insertionsort(ilist):
 		    	if x == 0:
 		    		check =  1
 	    y = y + 1
-    print(ilist)
+	    
 def radix():
     ilist = ilist2
         
