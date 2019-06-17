@@ -1,7 +1,39 @@
 
 
 #------------------------------------------------------------------------------
+#------------------------------------------------
+#Info on Quicksort
+#------------------------------------------------
+"""
+Best Case: O (n log(n))
+Worst Case: O (n**2)
+Average Case: O (n log(n)) 
+"""
 
+#------------------------------------------------
+#Quicksort function
+#------------------------------------------------
+
+
+"""
+This program sorts a list from least to greatest by selecting a pivot and splitting the list into two partitions repeatealy until the whole list has been
+been partitioned.
+"""
+
+"""
+quick_sort checks if the partition or list is greater than one.
+
+The partition function first finds the pivot (see get_pivot) and then declares pivotindex as the index number the pivot is in.
+The pivotValue is the actual pivot number and the first number of the list withen the paramiters of the partitioned list is replaced with the pivot
+The pivotindex is then placed as the the "border"
+The program then checks every number in the partitioned part of the list and compares it to the pivotValue
+If the number is less than the pivotValue, then the border is then moved up the list once and then swapped with the number that is less than the pivot value
+This go on untill the the whole list has been checked.
+Lastly the pivotindex (the first number in the partitioned list) is swaped with the border
+This whole proccess will effectivily separate the list with all the large numbers on the right and small numbers on the left
+then it will declares p as the border from the partition
+The function then runs quicksort two times again, one for the higher partition and the second time for the lower partition
+"""
 
 def quick_sort (ilist,low,hi,no):
     
@@ -24,6 +56,12 @@ def quick_sort (ilist,low,hi,no):
         quick_sort(ilist, p + 1, hi,no)
     return no
 
+
+"""
+get_pivot selects a pivot based on the best of three method where you pick the first number in the partition, the last and the middle.
+You then select the number which is the medium of the three and return the index value of the medium number
+"""
+
 def get_pivot(A, low, hi):
     mid = (hi + low) // 2
     pivot = hi
@@ -36,7 +74,12 @@ def get_pivot(A, low, hi):
     return pivot
 
 #------------------------------------------------------------------------------
-
+"""
+Bubblesort sorts its list by comparing the first number with the next number, and the switch if the current number is larger then the
+second. If the second number bigger, it will switch the numbers, else it will not switch. It will then check the next number and do the
+same thing. This will sweep the entire list once and if there were no swaps, end the for loop pre-emptive, else keep going through for the
+length of the list.
+"""
 def bubblesort(ilist):
     no = 0
     LOA = len(ilist)-1
