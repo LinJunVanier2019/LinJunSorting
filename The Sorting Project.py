@@ -5,13 +5,18 @@ import math
 from memory_profiler import profile
 import visual_sort as spa
 
+
+"""
+This function (SORTING) is the function called in order to run the entire program
+"""
 def SORTING():
 
     back = False 
-
-    #------------------------------------
+  
+#------------------------------------
     """
-    Reading text file for list
+    This function reads the list from the yagmai text file located in the same place this program is stored. This is used to quickly 
+    read a list without having to input it everytime the program runs.
     """
     def readlist():
         ilistO = []
@@ -25,6 +30,10 @@ def SORTING():
                 temp_lis = []
         return ilistO
 
+    """
+    This function holds all the infomation the needs to be printed out when a sort completes running
+    This is done in order to save space in where the functions are called 
+    """
     def info(ilist, end, start, no,itype):
         n = len(ilist)
         print (" ")
@@ -54,6 +63,11 @@ def SORTING():
     #-------------------------------------
     #Visuals
 
+    """
+    These functions are the command ran when corresponding button is pressed. inside the function, the list is taken from the text file
+    and then put through the sorting functions located in the visual_sort. The function will also then print out the time it took and
+    the number of operations, in this case, number of operations will be displayed on the graph.
+    """
     def quickV():
         ilistO = readlist()
         ilist = ilistO
@@ -108,6 +122,14 @@ def SORTING():
     #No Visuals
 
     import sorts_no_visuals as snv
+    
+    """
+    These functions act the same as the ones above, as they are the command functions that run when the corresponding button is pressed.
+    These functions will take this list from the text file, and then sort it using the corrisponding sort function.
+    They will also print out the time it took for the list to be sorted and the number of operations required. They will also print the 
+    best case, worst case, and the average case for the corresponding sort choosen. This is all taken from the info function above
+    """
+    
     @profile
     def quick():
         ilistO = readlist()
@@ -178,24 +200,36 @@ def SORTING():
 
     #-------------------------------------
 
+    """
+    This function simpliy reads the list from the text file, and prints it for the user to see
+    """
     def lists():
         ilistO = readlist()
         print (" ")
         print ("Original List")
         print (ilistO)
 
+        
+    """
+    This is the command function that runs another function, mainV, being the central hub for visual sort buttons
+    """
     def visuals():
         mainV()
 
+    """
+    This is the command function the runs another function, mainNV, being the central hub for non visual sort buttons
+    """    
     def no_visuals():
         mainNV()
-
-    def ram():
-        print ("ram")
-        #insert open ram code here
-        
+    
+    
+    """
+    This function, opens a windows from tkinter and displays 6 buttons; the back button,the Quick Sort button,the Bubble Sort button,
+    the Insertion Sort button, the Radix Sort button, and the Merge Sort button.
+    These will run the functions above, and depending on the button choosen, select the corrisponding sort to be used.
+    This is only for visuals however, as in these will open a graph and display a animated version of the list being sorted
+    """
     def mainV():
-
         
         root = tk.Tk()
         frame = tk.Frame(root)
@@ -231,6 +265,12 @@ def SORTING():
         root.minsize(400,400)
         root.maxsize(400,400)
 
+        
+    """
+    This is the central hub for all the buttons that run the sorting functions that do not have the animated graph. Pressing the button
+    will run the corresponding function, that was displayed and sort the list with the corresponding sorting function. Similar to the function
+    mentioned above, where as this one does not open a new window to show the list being sorted
+    """
     def mainNV():
 
             
@@ -268,8 +308,11 @@ def SORTING():
         root.minsize(400,400)
         root.maxsize(400,400)
 
-
-        
+    """
+    This function is the main hub for where this user selects whether they want to see the list be sorted with a visual display or
+    without a visual display. The buttons will run either mainV or mainNV which will open new windows with more buttons allowing
+    the user to select which specific sort they want to use. the main hub also has a button to print out the current unorganized list
+    """
     def main():
         root = tk.Tk()
         frame = tk.Frame(root)
@@ -296,22 +339,22 @@ def SORTING():
                        text="No Visuals",
                        command=no_visuals)
         Oof.pack(side=tk.LEFT)
-        
-        Oof = tk.Button(frame,
-                       text="Open Ram",
-                       command=ram)
-        Oof.pack(side=tk.LEFT)
-
 
         root.minsize(500,500)
         root.maxsize(500,500)
         root.mainloop()
     #----------------------------------------------
+    
+    """
+    This first reads the text file and determines of if it contains a list.
+    If it does not, the program print out instructions for the user to how and where to input their list.
+    If it does contain a list, it will print the list and run the tkinter main hub window
+    """
     ilistO = readlist()
     if ilistO == []:
         print ("please enter list into yagmai.txt text file")
         print ("with a format like ##,##,##,##")
     else:
         print ("Your list is :", ilistO)
-    main()
+        main()
 SORTING()
