@@ -2,6 +2,9 @@ import tkinter as tk
 import csv
 import time
 import math
+from memory_profiler import profile
+import visual_sort as spa
+
 
 def SORTING():
 
@@ -39,6 +42,8 @@ def SORTING():
         ilistO = readlist()
         ilist = ilistO
 
+        spa.visual_graph(1,ilist)
+
         print (" ")
         print ("Quick Sort")
         print (ilistO)
@@ -47,6 +52,8 @@ def SORTING():
         ilistO = readlist()
         ilist = ilistO
 
+        spa.visual_graph(2,ilist)
+
         print (" ")
         print ("Quick Sort")
         print (ilistO)
@@ -54,6 +61,8 @@ def SORTING():
     def insertionV():
         ilistO = readlist()
         ilist = ilistO
+
+        spa.visual_graph(3,ilist)
         
         print (" ")
         print ("Quick Sort")
@@ -62,6 +71,8 @@ def SORTING():
     def radixV():
         ilistO = readlist()
         ilist = ilistO
+
+        spa.visual_graph(4,ilist)
         
         print (" ")
         print ("Quick Sort")
@@ -70,6 +81,8 @@ def SORTING():
     def mergeV():
         ilistO = readlist()
         ilist = ilistO
+
+        spa.visual_graph(5,ilist)
         
         print (" ")
         print ("Quick Sort")
@@ -79,7 +92,7 @@ def SORTING():
     #No Visuals
 
     import sorts_no_visuals as snv
-
+    @profile
     def quick():
         ilistO = readlist()
         ilist = ilistO
@@ -94,7 +107,7 @@ def SORTING():
         print (ilist)
         info(ilist, end, start) 
 
-
+    @profile
     def bubble():
         ilistO = readlist()
         ilist = ilistO
@@ -107,7 +120,7 @@ def SORTING():
         print ("Bubble Sort")
         print(ilist)
         info(ilist, end, start) 
-
+    @profile
     def insertion():
         ilistO = readlist()
         ilist = ilistO
@@ -120,7 +133,7 @@ def SORTING():
         print ("Insertion Sort")
         print(ilist)
         info(ilist, end, start) 
-
+    @profile
     def radix():
         ilistO = readlist()
         ilist = ilistO
@@ -133,7 +146,7 @@ def SORTING():
         print ("Radix Sort")
         print(ilist)
         info(ilist, end, start) 
-        
+    @profile    
     def merge():
         ilistO = readlist()
         ilist = ilistO
@@ -285,6 +298,4 @@ def SORTING():
     else:
         print ("Your list is :", ilistO)
     main()
-
 SORTING()
-
