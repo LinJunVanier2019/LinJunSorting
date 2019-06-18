@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
@@ -149,7 +148,7 @@ def merge(ilist, start, mid, end):
 
 
 def visual_graph(st,ilist):
-    sort_list = [quick_sort, bubble_sort, insertion_sort, radix_sort, merge_sort]
+    sort_list = [quick_sort, bubble_sort, insertion_sort, radix_sort, merge_sort] #Calling a function
         
     sort_type = st
     
@@ -157,30 +156,37 @@ def visual_graph(st,ilist):
 
     title = ["Quick Sort","Bubble Sort","Insertion Sort","Radix Sort","Merge Sort"]
 
-
     max_num = max(ilist)
     N=len(ilist)
 
-
-
+    """To initialize the axis / set up title"""
     fig, ax = plt.subplots()
-    ax.set_title(title[sort_type-1])                     
+    ax.set_title(title[sort_type-1])
+
+    """To set up the bars that will represent values in the list"""
     bar_rects = ax.bar(range(len(ilist)), ilist, align="edge")
+
+    """To set limits for the bars' length y (height), x limit depends on length of list"""
     ax.set_xlim(0, N)
     ax.set_ylim(0, int(max_num*1.2))
+
+    """A line of text placed at the top left side of the window.
+       Shows number of operations taken (each yield = 1 operation)"""
     text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
+
+    """Define iteration variable that will keep track of number of operations and update the top-left text"""
     iteration = [0]
+
+    """This function works with the matplotlib.pyplot.FuncAnimation to animate the bars"""
     def update_fig(ilist, rects, iteration):
-            global rect 
             for rect, val in zip(rects, ilist): #zip joins rect and ilist coordiantes in pairs
-                    rect.set_height(val)
-            iteration[0] += 1
+                    rect.set_height(val)        #Setting height of bars
+            iteration[0] += 1                   #Incrementing 'operations' by 1
                     
             text.set_text("# of operations: {}".format(iteration[0]))
 
-                                       
-    anim = animation.FuncAnimation(fig, func=update_fig,
-        fargs=(bar_rects, iteration), frames=generator, interval=1,
-        repeat=False)
-    plt.show()
+    """This line makes the animation possible by setting up these properties:
+    figures for drawing/resizing, value of frames, specific arguments to be passed with each call of function, duration of delay, to repeat or not"""                                   
+    anim = animation.FuncAnimation(fig, func=update_fig, fargs=(bar_rects, iteration), frames=generator, interval=1, repeat=False)
 
+    plt.show()
