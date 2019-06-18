@@ -21,7 +21,7 @@ def SORTING():
     def readlist():
         ilistO = []
         temp_lis = []
-        with open ("yagmai.txt") as tf:
+        with open ("textfile.txt") as tf:
             rtf = csv.reader(tf, delimiter = ",")
             for line in rtf:
                 for p in range (len(line)):
@@ -352,7 +352,7 @@ def SORTING():
     """
     ilistO = readlist()
     if ilistO == []:
-        print ("please enter list into yagmai.txt text file")
+        print ("please enter list into textfile.txt text file")
         print ("with a format like ##,##,##,##")
     else:
         print ("Your list is :", ilistO)
