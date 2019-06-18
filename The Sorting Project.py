@@ -335,10 +335,10 @@ def SORTING():
         slogan.pack(side=tk.LEFT)
 
 
-        Oof = tk.Button(frame,
+        novis = tk.Button(frame,
                        text="No Visuals",
                        command=no_visuals)
-        Oof.pack(side=tk.LEFT)
+        novis.pack(side=tk.LEFT)
 
         root.minsize(500,500)
         root.maxsize(500,500)
@@ -352,7 +352,7 @@ def SORTING():
     """
     ilistO = readlist()
     if ilistO == []:
-        print ("please enter list into textfile.txt text file")
+        print ("please enter list into textfile.txt file")
         print ("with a format like ##,##,##,##")
     else:
         print ("Your list is :", ilistO)
