@@ -146,7 +146,9 @@ def merge(ilist, start, mid, end):
 #---------------------------------------------------------------------------------------------------------
 
 
-
+"""
+This will collect information needed for the function animation.FuncAnimation
+"""
 def visual_graph(st,ilist):
     sort_list = [quick_sort, bubble_sort, insertion_sort, radix_sort, merge_sort] #Calling a function
         
