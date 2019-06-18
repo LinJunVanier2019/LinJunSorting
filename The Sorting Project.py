@@ -130,6 +130,9 @@ def SORTING():
     best case, worst case, and the average case for the corresponding sort choosen. This is all taken from the info function above
     """
     
+    """
+    The '@profile' is a decorator for memory_profiler, it can provide the memory usage of the marked function line-by-line
+    """
     @profile
     def quick():
         ilistO = readlist()
