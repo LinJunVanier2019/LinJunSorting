@@ -41,25 +41,25 @@ def SORTING():
         print (" ")
         print ("#O = ", no) #FIND NUMBER OF OPERATIONS AND PUT HERE
         if itype == 1 :
-            print ("Best Case: ", (n*math.log(n)))
-            print ("Worst Case: ", (n**2))
-            print ("Average Case : ", (n*math.log(n)))
+            print ("Best Case:  (n*math.log(n))")
+            print ("Worst Case:  (n**2)")
+            print ("Average Case :  (n*math.log(n))")
         elif itype == 2:
-            print ("Best Case: ", (n))
-            print ("Worst Case: ", (n**2))
-            print ("Average Case: ",(n**2))
+            print ("Best Case:  (n)")
+            print ("Worst Case:  (n**2)")
+            print ("Average Case: (n**2)")
         elif itype == 3:
-            print ("Best Case: ", (n))
-            print ("Worst Case: ", (n**2))
-            print ("Average Case: ",(n**2))
+            print ("Best Case:  (n)")
+            print ("Worst Case:  (n**2)")
+            print ("Average Case: (n**2)")
         elif itype == 4:
-            print ("Best Case: ", (n*10))
-            print ("Worst Case: ", (n*10))
-            print ("Average Case: ",(n*10))
+            print ("Best Case:  (n*10)")
+            print ("Worst Case:  (n*10)")
+            print ("Average Case: (n*10)")
         elif itype == 5:
-            print ("Best Case: ", (n*math.log(n)))
-            print ("Worst Case: ", (n**2))
-            print ("Average Case: ",(n*math.log(n)))
+            print ("Best Case:  (n*math.log(n))")
+            print ("Worst Case:  (n**2)")
+            print ("Average Case: (n*math.log(n))")
     #-------------------------------------
     #Visuals
 
@@ -130,9 +130,6 @@ def SORTING():
     best case, worst case, and the average case for the corresponding sort choosen. This is all taken from the info function above
     """
     
-    """
-    The '@profile' is a decorator for memory_profiler, it can provide the memory usage of the marked function line-by-line
-    """
     @profile
     def quick():
         ilistO = readlist()
@@ -346,7 +343,7 @@ def SORTING():
         root.minsize(500,500)
         root.maxsize(500,500)
         root.mainloop()
-    #----------------------------------------------
+    #------------------------------------------------
     
     """
     This first reads the text file and determines of if it contains a list.
