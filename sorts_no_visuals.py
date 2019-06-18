@@ -122,7 +122,12 @@ def insertionsort(ilist):
 
 
 #------------------------------------------------------------------------------
-
+"""
+Radix sort is similar to counting sort and bucket sort.
+It creates buckets for each base digit (ie. 0-9)
+And rearrange the list using counting sort.
+It rearranges each number based on their radix
+"""
 
 def radixsort(ilist):
     no=0
@@ -151,11 +156,24 @@ def radixsort(ilist):
     	digit += 1   #loop stop when check digit reaches maxdigit
     return no
 #------------------------------------------------------------------------------
-
+"""
+Merge sort is a devide-and-conquer algorithm.
+It it based on the idea of repeatedly breaking the original list into half until each sublist only has one element.
+Then merging all the sublists results a sorted list.
+In merge sort, the concept of function recursion is used.
+It is basically the idea of calling a function while defining it
+To understand the concept, imagine two mirrors are placed face to face, therefore any object between wiil be reflected recursively
+To better understand the use of function recursion here, imagine it as a tree diagram. It breaks down the orinal list.
+into branches (left and right half), then keeps breaking the parent branches into more sub-branches.
+When there is only one element left in each sublist. The following codes will sort each branch(sublist) from bottom to top.
+"""
 def mergesort (alist):
     no=mergesort2 (alist, 0)
     return no
 def mergesort2(alist,no):
+"""
+This will keep dividing the left half of the original function until each sublist only has one element
+"""
     if len(alist)>1:            
         mid =len(alist)//2       
         lefthalf =alist[:mid]   
@@ -168,7 +186,9 @@ def mergesort2(alist,no):
         l=0                     
         r=0                      
         a=0                    
-
+"""
+Compare each index to another and merge them in the correct order
+"""
         while l < len(lefthalf) and r < len(righthalf):
             no +=1
             if lefthalf[l] < righthalf[r]:                  
