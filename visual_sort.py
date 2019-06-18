@@ -68,16 +68,16 @@ def insertion_sort (ilist):
 			x = y
 			while check !=1:
 				if ilist[x] < ilist[x-1]:
-					temp = ilist[x]
-					ilist[x] = ilist[x-1]
-					ilist[x-1] = temp
+					temp = ilist[x]         #<-
+					ilist[x] = ilist[x-1]   #<- Swap happens here
+					ilist[x-1] = temp       #<-
 					yield ilist
 				else:
-					check = 1
-				x = x - 1
+					check = 1               # Ends while loop
+				x = x - 1                       # Decrement index value
 				
 				if x == 0:
-					check =  1
+					check =  1              # Ends while loop
 			yield ilist
 		y = y + 1
 #-------------------------------------------------------------------------------
@@ -146,9 +146,7 @@ def merge(ilist, start, mid, end):
 #---------------------------------------------------------------------------------------------------------
 
 
-"""
-This will collect information needed for the function animation.FuncAnimation
-"""
+
 def visual_graph(st,ilist):
     sort_list = [quick_sort, bubble_sort, insertion_sort, radix_sort, merge_sort] #Calling a function
         
