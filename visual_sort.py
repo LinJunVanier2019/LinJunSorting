@@ -158,7 +158,6 @@ def visual_graph(st,ilist):
     title = ["Quick Sort","Bubble Sort","Insertion Sort","Radix Sort","Merge Sort"]
 
 
-    rect = 0
     max_num = max(ilist)
     N=len(ilist)
 
